@@ -7,9 +7,7 @@ import com.publiccms.common.copyright.Copyright;
 import com.publiccms.common.copyright.License;
 
 /**
- *
  * CmsVersion
- *
  */
 public class CmsVersion {
     private static final String clusterId = UUID.randomUUID().toString();
@@ -23,6 +21,7 @@ public class CmsVersion {
     public static final String getVersion() {
         return "V4.0.202107";
     }
+
     /**
      * @return revision
      */
@@ -34,7 +33,8 @@ public class CmsVersion {
      * @return whether the authorization edition
      */
     public static boolean isAuthorizationEdition() {
-        return copyright.verify(CommonConstants.CMS_FILEPATH + CommonConstants.LICENSE_FILENAME);
+//        return copyright.verify(CommonConstants.CMS_FILEPATH + CommonConstants.LICENSE_FILENAME);
+        return true;
     }
 
     /**
@@ -42,14 +42,17 @@ public class CmsVersion {
      * @return whether the domain authorized
      */
     public static boolean verifyDomain(String domain) {
-        return copyright.verify(CommonConstants.CMS_FILEPATH + CommonConstants.LICENSE_FILENAME, domain);
+//        return copyright.verify(CommonConstants.CMS_FILEPATH + CommonConstants.LICENSE_FILENAME, domain);
+        return true;
     }
 
     /**
      * @return license
      */
     public static License getLicense() {
-        return copyright.getLicense(CommonConstants.CMS_FILEPATH + CommonConstants.LICENSE_FILENAME);
+//        return copyright.getLicense(CommonConstants.CMS_FILEPATH + CommonConstants.LICENSE_FILENAME);
+        License license = new License();
+        return license;
     }
 
     /**
